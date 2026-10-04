@@ -1,0 +1,10 @@
+{
+  "description": "Oracle for USDC",
+  "defaults": {},
+  "roles": ["CREATOR"],
+  "oracles": [
+    {"symbol": "USDC", "contract": "MEDIANIZER_USDC"},
+    {"symbol": "", "contract": ""}
+  ],
+  "ilks": []
+}

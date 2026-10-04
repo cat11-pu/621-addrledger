@@ -1,0 +1,14 @@
+{
+  "run": "run-4",
+  "scenario": 2,
+  "lastUpdated": "2019-03-02T11:20:00Z",
+  "data": {
+    "MEDIANIZER_ETH": "0x61c3488d54bb965f6a8aeabb0f5010a3aa5a51af",
+    "MEDIANIZER_REP": "0xd3a53f0ca30e3511fa3b443070f712afc65a754f",
+    "MEDIANIZER_BTC": "0xaa11bb22cc33dd44ee55ff6600778899aabbccdd",
+    "MCD_JOIN_ETH_A": "0x2F7d6B1A1b3a1D0f3A3b3C3d3E3f404142434445",
+    "MCD_FLIP_ETH_A": "0xe7472b343389b82ec07514dad0adf94b72259474",
+    "MCD_FLIP_REP_A": "0x11223344556677889900aabbccddeeff00112233",
+    "PIP_ETH": "0x61c3488d54bb965f6a8aeabb0f5010a3aa5a51af"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "run": "run-2",
+  "scenario": 1,
+  "lastUpdated": "2019-03-01T09:30:00Z",
+  "data": {
+    "MEDIANIZER_ETH": "0x61c3488d54bb965f6a8aeabb0f5010a3aa5a51af",
+    "MEDIANIZER_REP": "0xd3a53f0ca30e3511fa3b443070f712afc65a754f",
+    "MCD_JOIN_ETH_A": "0x2f7d6b1a1b3a1d0f3a3b3c3d3e3f404142434445",
+    "MCD_FLIP_ETH_A": "0xe7472b343389b82ec07514dad0adf94b72259474",
+    "MCD_VAT": "0x8281e7d6f955d0cd9af747525cbe0d985af241e7",
+    "PROXY_REGISTRY": "0x5b763736b398570044aa6c6c25d25abc54ce5a55"
+  }
+}

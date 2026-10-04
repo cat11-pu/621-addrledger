@@ -1,0 +1,27 @@
+{
+  "name": "dss-deploy-scripts",
+  "description": "MCD deployment",
+  "scenarios": [
+    {
+      "name": "scenario0",
+      "description": "MCD - General deployment",
+      "run": "deploy-testchain.sh",
+      "configPath": "configs/step-1.json",
+      "outPath": "out/addresses.json"
+    },
+    {
+      "name": "scenario1",
+      "description": "Example 1",
+      "run": "deploy-testchain.sh",
+      "configPath": "configs/step-2.json",
+      "outPath": "out/addresses.json"
+    },
+    {
+      "name": "scenario2",
+      "description": "Example 2",
+      "run": "deploy-testchain.sh",
+      "configPath": "configs/step-3.json",
+      "outPath": "out/addresses.json"
+    }
+  ]
+}

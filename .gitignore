@@ -1,0 +1,8 @@
+vendor
+.idea/
+bin
+.apiToken
+certs
+.testdir
+main
+deployment

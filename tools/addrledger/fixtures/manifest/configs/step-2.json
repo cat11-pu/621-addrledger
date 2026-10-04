@@ -1,0 +1,14 @@
+{
+  "description": "Oracles and ilks, batch two",
+  "defaults": {},
+  "roles": ["CREATOR"],
+  "omniaFromAddr": "0xdc9A20F5a46AFE0802b361076BeFC51f787B2e58",
+  "oracles": [
+    {"symbol": "BTC", "contract": "MEDIANIZER_BTC"},
+    {"symbol": "DAI", "contract": "MEDIANIZER_DAI"}
+  ],
+  "ilks": [
+    {"ilk": "BTC-A", "join": "MCD_JOIN_BTC_A", "flip": "MCD_FLIP_BTC_A"},
+    {"ilk": "ETH-A", "join": "MCD_JOIN_ETH_A"}
+  ]
+}

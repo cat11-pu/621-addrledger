@@ -1,0 +1,15 @@
+{
+  "description": "Oracles and ilks, batch one",
+  "defaults": {},
+  "roles": ["CREATOR"],
+  "omniaFromAddr": "0xdc9A20F5a46AFE0802b361076BeFC51f787B2e58",
+  "pauseDelay": "0",
+  "oracles": [
+    {"symbol": "ETH", "contract": "MEDIANIZER_ETH"},
+    {"symbol": "REP", "contract": "MEDIANIZER_REP"}
+  ],
+  "ilks": [
+    {"ilk": "ETH-A", "join": "MCD_JOIN_ETH_A", "flip": "MCD_FLIP_ETH_A"},
+    {"ilk": "REP-A", "join": "MCD_JOIN_REP_A", "flip": "MCD_FLIP_REP_A"}
+  ]
+}

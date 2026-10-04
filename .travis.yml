@@ -1,0 +1,44 @@
+language: go
+dist: xenial
+services: docker
+
+branches: # build all
+  only:
+  - /.*/
+
+go:
+  - '1.11.x'
+
+script:
+  - make vendor
+  - make lint
+  - make test
+
+deploy:
+- provider: script
+  script: >-
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin &&
+    make build-base-image &&
+    make build-image TAG=dev &&
+    make build-worker-image TAG=dev &&
+    make docker-push TAG=dev
+  on:
+    branch: develop
+  skip_cleanup: true
+- provider: script
+  script: >-
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin &&
+    make build-base-image &&
+    make build-image TAG=latest &&
+    make build-worker-image TAG=latest &&
+    make docker-push TAG=latest
+  on:
+    branch: master
+  skip_cleanup: true
+
+notifications:
+  webhooks:
+    urls:
+      - secure: "cgeeKsMc0qxOIupuJSnF22zFBAvhmvzGb6WhFZ+sLo63eaFN+rAguHsHp6AXbNSivDzJOjPG+/AkyLI0UZ5IkjLDnPr85BFnfAt6EQs8Yu7Rxu9NKsblU5rL+ZMbC6XzPhvHHpbrTtiU65tzrSe5potRih/2C0chXw0l/gGjb8FfT07yVjKXGGJHZXzDtl76hmrmfzqabkiUt/qMRmdZQeLXYbDPgmfg5O1Ls+2dqkYKtDmPPsucNs6h5tnYTwqGCfk1FjuB+TqTnQmMOZNAIa+IxYMBbXOypQeg/hYBuPmwynOk6bY4qL7WD4mRemPL3WMwoaO5oPLamOFMSvphd0JOFo/k1yUCHYy/Acpsmg4oVwf5+G3f1ywsSsMNonqGTDiE7SxB0EsQtqxWKCvWmXIH7B8m/P3UsTUY/YSBf2PuXtIQx72bMl5OJOxjvcOA++1o+jYfyhkbSkffYvGho/WhuIFqUdqCuBY0bpqj1TjnZdGZ1nN8i9rJfdWleVypGP+mrz3pFJtvrvsnmJ5jcaguLRdF9vB3NEKzntxTOUZyMzRoHsStxS6Drmw6KwSKEmCw8cBHYMS2fo/0jD0tyYgZpopN2PNgceL65b4EGCd22yjZ2cWGpksThlohzwc6D+IkZrPzM25xxe8O7UEtHbK8dxsfsm5wm/w893gBhaQ="
+    on_failure: always
+    on_success: never
